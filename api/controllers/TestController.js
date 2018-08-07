@@ -7,7 +7,7 @@
 
 module.exports = {
   correctIp: function(req, res, next) {
-		if (!req.param('id')) return res.badRequest('Ip is required');
+		if (!req.param('ip')) return res.badRequest('Ip is required');
 		if (!req.param('secret')) return res.badRequest('Secret is required');
 		if (req.param('secret') != variables.secret) return res.forbidden('forbidden');
 		if (externalIp == req.param('ip')) return res.send();
